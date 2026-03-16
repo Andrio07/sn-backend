@@ -7,6 +7,7 @@ const authRoutes = require('./routes/auth');
 const anggotaRoutes = require('./routes/anggota');
 const kegiatanRoutes = require('./routes/kegiatan');
 const beritaRoutes = require('./routes/berita');
+const galeriRoutes = require(./routes/galeri');
 
 const app = express();
 const PORT = process.env.PORT || 5001;
@@ -18,6 +19,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/anggota', anggotaRoutes);
 app.use('/api/kegiatan', kegiatanRoutes);
 app.use('/api/berita', beritaRoutes);
+app.use('/api/galeri', galeriRoutes);
 
 app.get('/', (req, res) => {
   res.json({ message: 'SN Backend berjalan!' });
