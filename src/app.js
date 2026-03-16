@@ -5,6 +5,7 @@ require('./database/db');
 
 const authRoutes = require('./routes/auth');
 const anggotaRoutes = require('./routes/anggota');
+const kegiatanRoutes = require('./routes/kegiatan');
 
 const app = express();
 const PORT = process.env.PORT || 5001;
@@ -14,6 +15,7 @@ app.use(express.json());
 
 app.use('/api/auth', authRoutes);
 app.use('/api/anggota', anggotaRoutes);
+app.use('/api/kegiatan', kegiatanRoutes);
 
 app.get('/', (req, res) => {
   res.json({ message: 'SN Backend berjalan!' });
